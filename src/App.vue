@@ -1,22 +1,32 @@
 <template>
-  <div>
-    <Count />
-    <Increment />
-    <Decrement />
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/count-page">TodoList</router-link>
+    </div>
+    <router-view />
   </div>
 </template>
 
-<script>
-import Count from "./components/Count.vue";
-import Increment from "./components/Increment.vue";
-import Decrement from "./components/Decrement.vue";
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  padding: 10px;
+}
 
-export default {
-  name: "App",
-  components: {
-    Count,
-    Increment,
-    Decrement,
-  },
-};
-</script>
+#nav {
+  margin-bottom: 20px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>
